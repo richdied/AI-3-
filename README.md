@@ -1,7 +1,8 @@
 # AI 3조 웹개발프로젝트
 
-This is the AIS education training team development repository.
-RULE
+# This is AI Python Web Project team development repository.
+# RULE
+
 Main과 Dev 브런치에는 직접적으로 푸쉬하지 않기(작업시 항상 Dev로부터 feature/{Issues.No}-{작업내용} 형식의 브런치 따서 작업.
 Dev에서 따온 브런치는 한가지 기능 단위로 만들기.(ex 로그인브런치1, 회원가입브런치1)
 Dev로 PullRequest 하기전 불필요 한 코드가 있을지 모르니 다른 분들에게 코드리뷰를 받은 후 PullRequest작업하기.
