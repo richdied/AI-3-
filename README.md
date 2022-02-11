@@ -1,6 +1,6 @@
 # AI 3조 웹개발프로젝트
 
-# This is AI Python Web Project team development repository.
+# This is AI Python Web Project Team Development Repository.
 # RULE
 
 Main브런치에는 직접적으로 푸쉬하지 않기(작업시 항상 Main로부터 feature/{Issues.No}-{작업내용} 형식의 브런치 따서 작업.
