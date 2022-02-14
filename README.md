@@ -1,5 +1,10 @@
 # AI 3조 웹개발프로젝트
 
+## 윤수진 작성자 화면표기 변경사항
+* question, answer 모델에 author_id 적용 
+* admin 계정 추가 
+* 소스머지후 아나콘다 콘솔에서 "python manage.py migrate" 각자 로컬에서 수행 必
+
 # This is AI Python Web Project Team Development Repository.
 # RULE
 
