@@ -2,3 +2,52 @@
     border-top:dotted 1px #ddd;
     font-size:0.7em;
 }
+/* 이동가능한 링크의 background color 와 font color */
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #c5cfd8;
+    background-color: #488745;
+}
+/* 이동할수 없는 링크의 background color 와 font color */
+.page-item.disabled .page-link {
+    color: #c5cfd8;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #488745;
+}
+/* 활성화 되어 있는 링크의 background color 와 font color */
+.page-item.active .page-link {
+    z-index: 1;
+    color: #c5cfd8;
+    background-color: #0089f1;
+}
+/* Focus되었을때의 background color 와 font color */
+.page-link:focus, .page-link:hover {
+    color: #c5cfd8;
+    text-decoration: none;
+    background-color: #0089f1;
+}
+
+.page-item active {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #c5cfd8;
+    background-color: #488745;
+}
+
+.btn {
+    position: relative;
+    display: left;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: white;
+    background-color: #488745;
+}
