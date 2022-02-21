@@ -2,24 +2,45 @@
 <!doctype html>
 <html lang="ko">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
     <link rel="stylesheet" type="image/png" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" type="image/png" href="{% static 'bootstrap-grid.min.css' %}">
     <!-- pybo CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    <title>Hello, Super Board!</title>
+    <title>날아라, Super Board!</title>
 </head>
 <body>
 {% include "navbar.html" %}
-<div class="jumbotron">
-  <h1>Hello, world!</h1>
-  <p>뭐라고 쓰고 싶니 ? </p>
-  <p><strong>되나 ?</strong></p>
-  <p><code>Python</code></p>
+
+<div class="container border rounded-3">
+    <div class="h-50 d-inline-block w-100 p-3">
+        <div>
+            <p> </p>
+            <h2>
+                <button type="button" class="btn btn-outline-success" disabled>
+                    답파고에 오신 것을 환영합니다 :)
+                </button>
+            </h2>
+            <div>
+                <div>
+
+                    <strong>AI 서비스 개발 4회차 여러분 안녕하세요 ! 저희는 (3) 날아라, 슈퍼보드 입니다.</strong>
+                    <p> </p>
+                    <p>수업은 들었는데, 모르는 부분이 있지는 않나요 ?</p>
+                    <p>간단한 <strong>회원가입 이후,</strong> 아래에 <strong>질문 등록하기</strong> 버튼을 통해 질문을 남겨주세요.  </p>
+                    * 질문 가능 언어 : <code> 【Python】, 【MySQL】, 【Django】, 【HTML】</code>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- 기본 템플릿 안에 삽입될 내용 Start -->

@@ -5,7 +5,7 @@ from ..models import Question
 
 def index(request):
     """
-    pybo 목록 출력
+    답파고 목록 출력
     """
     # 입력 파라미터
     page = request.GET.get('page', '1')  # 페이지
@@ -38,7 +38,7 @@ def index(request):
 
 def detail(request, question_id):
     """
-    pybo 내용 출력
+    답파고 내용 출력
     """
     question = get_object_or_404(Question, pk=question_id)
     context = {'question': question}

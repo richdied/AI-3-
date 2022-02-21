@@ -9,7 +9,7 @@ from ..models import Question, Answer, Comment
 @login_required(login_url='common:login')
 def comment_create_question(request, question_id):
     """
-    pybo 질문댓글등록
+    답파고 질문댓글등록
     """
     question = get_object_or_404(Question, pk=question_id)
     if request.method == "POST":
@@ -30,7 +30,7 @@ def comment_create_question(request, question_id):
 @login_required(login_url='common:login')
 def comment_modify_question(request, comment_id):
     """
-    pybo 질문댓글수정
+    답파고 질문댓글수정
     """
     comment = get_object_or_404(Comment, pk=comment_id)
     if request.user != comment.author:
@@ -53,7 +53,7 @@ def comment_modify_question(request, comment_id):
 @login_required(login_url='common:login')
 def comment_delete_question(request, comment_id):
     """
-    pybo 질문댓글삭제
+    답파고 질문댓글삭제
     """
     comment = get_object_or_404(Comment, pk=comment_id)
     if request.user != comment.author:
@@ -66,7 +66,7 @@ def comment_delete_question(request, comment_id):
 @login_required(login_url='common:login')
 def comment_create_answer(request, answer_id):
     """
-    pybo 답글댓글등록
+    답파고 답글댓글등록
     """
     answer = get_object_or_404(Answer, pk=answer_id)
     if request.method == "POST":
@@ -88,7 +88,7 @@ def comment_create_answer(request, answer_id):
 @login_required(login_url='common:login')
 def comment_modify_answer(request, comment_id):
     """
-    pybo 답글댓글수정
+    답파고 답글댓글수정
     """
     comment = get_object_or_404(Comment, pk=comment_id)
     if request.user != comment.author:
@@ -112,7 +112,7 @@ def comment_modify_answer(request, comment_id):
 @login_required(login_url='common:login')
 def comment_delete_answer(request, comment_id):
     """
-    pybo 답글댓글삭제
+    답파고 답글댓글삭제
     """
     comment = get_object_or_404(Comment, pk=comment_id)
     if request.user != comment.author:
