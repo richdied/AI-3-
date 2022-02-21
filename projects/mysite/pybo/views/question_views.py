@@ -9,7 +9,7 @@ from ..models import Question
 @login_required(login_url='common:login')
 def question_create(request):
     """
-    답파고 질문등록
+    pybo 질문등록
     """
     if request.method == 'POST':
         form = QuestionForm(request.POST)
@@ -27,7 +27,7 @@ def question_create(request):
 @login_required(login_url='common:login')
 def question_modify(request, question_id):
     """
-    답파고 질문수정
+    pybo 질문수정
     """
     question = get_object_or_404(Question, pk=question_id)
     if request.user != question.author:
@@ -49,7 +49,7 @@ def question_modify(request, question_id):
 @login_required(login_url='common:login')
 def question_delete(request, question_id):
     """
-    답파고 질문삭제
+    pybo 질문삭제
     """
     question = get_object_or_404(Question, pk=question_id)
     if request.user != question.author:

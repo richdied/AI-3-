@@ -86,14 +86,15 @@
 
     {% for answer in question.answer_set.all %}
     <a name="answer_{{ answer.id }}"></a>
+
     <div class="row my-3">
         <div class="col-1">  <!-- 추천영역 -->
             <div class="bg-light text-center p-3 border font-weight-bolder mb-1">{{answer.voter.count}}</div>
             <a href="#" data-uri="{% url 'pybo:vote_answer' answer.id  %}"
-               class="recommend btn btn-sm btn-secondary btn-block my-1">추천</a>
+                class="recommend btn btn-sm btn-secondary btn-block my-1">추천</a>
         </div>
         <div class="col-11">  <!-- 답변영역 -->
-            <!-- 기존내용 -->
+
             <div class="card">
                 <div class="card-body">
                     <div class="card-text" style="white-space: pre-line;">{{ answer.content }}</div>
@@ -161,7 +162,7 @@
         {% endif %}
         <div class="form-group">
             <textarea {% if not user.is_authenticated %}disabled{% endif %}
-                      name="content" id="content" class="form-control" rows="10"></textarea>
+              name="content" id="content" class="form-control" rows="10"></textarea>
         </div>
         <input type="submit" value="답변등록" class="btn btn-outline-success">
     </form>
@@ -183,3 +184,4 @@ $(document).ready(function(){
 });
 </script>
 {% endblock %}
+

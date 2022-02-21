@@ -1,11 +1,12 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q, Count
+
 from ..models import Question
 
 def index(request):
     """
-    답파고 목록 출력
+    pybo 목록 출력
     """
     # 입력 파라미터
     page = request.GET.get('page', '1')  # 페이지
@@ -29,16 +30,24 @@ def index(request):
             Q(answer__author__username__icontains=kw)  # 답변 글쓴이검색
         ).distinct()
 
+    # 입력 파라미터
+    page = request.GET.get('page', '1')  # 페이지
+
+    # 조회
+    question_list = Question.objects.order_by('-create_date')
+
     # 페이징처리
     paginator = Paginator(question_list, 10)  # 페이지당 10개씩 보여주기
     page_obj = paginator.get_page(page)
 
+
     context = {'question_list': page_obj, 'page': page, 'kw': kw, 'so': so}
+    context = {'question_list': page_obj}
     return render(request, 'pybo/question_list.html', context)
 
 def detail(request, question_id):
     """
-    답파고 내용 출력
+    pybo 내용 출력
     """
     question = get_object_or_404(Question, pk=question_id)
     context = {'question': question}
