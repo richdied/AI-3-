@@ -1,7 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect, resolve_url
-from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 
 from ..forms import AnswerForm
@@ -10,7 +9,7 @@ from ..models import Question, Answer
 @login_required(login_url='common:login')
 def answer_create(request, question_id):
     """
-    pybo 답변등록
+    답파고 답변등록
     """
     question = get_object_or_404(Question, pk=question_id)
     if request.method == "POST":
@@ -21,10 +20,8 @@ def answer_create(request, question_id):
             answer.create_date = timezone.now()
             answer.question = question
             answer.save()
-
             return redirect('{}#answer_{}'.format(
                 resolve_url('pybo:detail', question_id=question.id), answer.id))
-            return redirect('pybo:detail', question_id=question.id)
     else:
         form = AnswerForm()
     context = {'question': question, 'form': form}
@@ -33,7 +30,7 @@ def answer_create(request, question_id):
 @login_required(login_url='common:login')
 def answer_modify(request, answer_id):
     """
-    pybo 답변수정
+    답파고 답변수정
     """
     answer = get_object_or_404(Answer, pk=answer_id)
     if request.user != answer.author:
@@ -48,7 +45,6 @@ def answer_modify(request, answer_id):
             answer.save()
             return redirect('{}#answer_{}'.format(
                 resolve_url('pybo:detail', question_id=answer.question.id), answer.id))
-            return redirect('pybo:detail', question_id=answer.question.id)
     else:
         form = AnswerForm(instance=answer)
     context = {'answer': answer, 'form': form}
@@ -57,7 +53,7 @@ def answer_modify(request, answer_id):
 @login_required(login_url='common:login')
 def answer_delete(request, answer_id):
     """
-    pybo 답변삭제
+    답파고 답변삭제
     """
     answer = get_object_or_404(Answer, pk=answer_id)
     if request.user != answer.author:
