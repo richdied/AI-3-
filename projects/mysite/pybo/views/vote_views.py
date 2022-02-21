@@ -16,7 +16,8 @@ def vote_question(request, question_id):
     else:
         question.voter.add(request.user)
     return redirect('pybo:detail', question_id=question.id)
-    
+
+
 @login_required(login_url='common:login')
 def vote_answer(request, answer_id):
     """

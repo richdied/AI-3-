@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<p> </p>
 <div class="container">
-    <h5 class="my-3 border-bottom pb-2">질문등록</h5>
+    <div class="card text-white bg-success mb-3 text-center" style="max-width: 10rem; border-radius: 100px;">
+        <div class="card-body">
+            <h5 class="card-title">질문등록</h5>
+        </div>
+    </div>
+
     <form method="post" class="post-form my-3">
         {% csrf_token %}
         <!-- 오류표시 Start -->
@@ -27,7 +33,7 @@
             <textarea class="form-control" name="content"
                       id="content" rows="10">{{ form.content.value|default_if_none:'' }}</textarea>
         </div>
-        <button type="submit" class="btn btn-primary">저장하기</button>
+        <button type="submit" class="btn btn-outline-success">저장하기</button>
     </form>
 </div>
 {% endblock %}
